@@ -1,0 +1,53 @@
+Arguments: 
+  /usr/bin/node12 /usr/local/bin/yarnpkg install
+
+PATH: 
+  /home/maso/git/gpg/mxe/usr/bin:/home/maso/.nix-profile/bin:/home/maso/git/gpg/mxe/usr/bin:/home/maso/bin:/usr/local/bin:/usr/bin:/bin:/snap/bin:/home/maso/.npm-packages/bin:/home/maso/git/mostafabarmshory/group-tool:/home/maso/bin:/opt/gradle/gradle-6.2.1/bin:/home/maso/.npm-packages/bin:/home/maso/git/mostafabarmshory/group-tool:/home/maso/bin:/opt/gradle/gradle-6.2.1/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.16.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: Client network socket disconnected before secure TLS connection was established
+      at connResetException (internal/errors.js:604:14)
+      at TLSSocket.onConnectEnd (_tls_wrap.js:1513:19)
+      at Object.onceWrapper (events.js:417:28)
+      at TLSSocket.emit (events.js:323:22)
+      at endReadableNT (_stream_readable.js:1204:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web",
+      "eject": "expo eject"
+    },
+    "dependencies": {
+      "expo": "~39.0.2",
+      "expo-status-bar": "~1.0.2",
+      "react": "16.13.1",
+      "react-dom": "16.13.1",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
+      "react-native-web": "~0.13.12"
+    },
+    "devDependencies": {
+      "@babel/core": "~7.9.0"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
