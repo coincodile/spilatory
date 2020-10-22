@@ -1,34 +1,28 @@
-import React from 'react';
-import {
-	StyleSheet,
-	Text,
-	View,
-	ScrollView,
-	Image
-} from 'react-native';
+import React, { Component } from 'react';
 
-import SimpleGamePad from './components/SimpleGamePad.js';
+import Login from './screens/Login';
+import Game from './screens/Game';
+import $account from './services/Account';
 
-export default function App() {
-	return (
-		<ScrollView>
-			<View>
-				<Image
-					source={{ uri: 'https://reactnative.dev/docs/assets/p_cat2.png' }}
-					style={{ width: 80, height: 80 }} />
-				<h1>Spilotory</h1>
-				<Text>Welcome to spenlotory.</Text>
-			</View>
-			<SimpleGamePad />
-		</ScrollView>
-	);
+
+export default class ReactNativeStormpath extends Component {
+
+	state = {
+		isLoggedIn: false
+	}
+
+	constructor() {
+		super();
+		$account.load()
+			.then(() => this.state.isLoggedIn = !$account.isAnonymous())
+	}
+	render() {
+		if (this.state.isLoggedIn)
+			return <Game
+				onLogoutPress={() => this.setState({ isLoggedIn: false })} />;
+		else
+			return <Login
+				onLoginPress={() => this.setState({ isLoggedIn: true })} />;
+	}
 }
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});

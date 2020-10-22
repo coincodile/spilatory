@@ -5,7 +5,6 @@ import {
 	View
 } from 'react-native';
 
-
 class SimpleGamePad extends React.Component {
 	constructor(props) {
 		super(props);
